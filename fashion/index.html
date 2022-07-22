@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"
+      rel="stylesheet"
+    /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,100&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="../style.css" />
+    <title>travel site (animated)</title>
+  </head>
+  <body data-barba="wrapper">
+    <!-- ! layer 1 -->
+    <header class="nav-header">
+      <div class="logo-wrapper">
+        <div class="logo-badge"></div>
+        <h1><a href="./index.html" id="logo">logo</a></h1>
+      </div>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+      </div>
+    </header>
+
+    <!-- ! layer 2 -->
+    <main data-barba="container" data-barba-namespace="fashion">
+      <section class="fashion1 detail-slide">
+        <div class="fashion-text">
+          <h1>Lorem ipsum</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consequuntur quaerat magni nisi fugiat quas quam illum at ipsam
+            cumque quia!
+          </p>
+        </div>
+        <div class="fashion-img">
+          <img src="../images/fashion-img1.png" alt="" />
+        </div>
+        <div class="fashion-nr"><span>01</span></div>
+      </section>
+
+      <section class="fashion2 detail-slide">
+        <div class="fashion-text">
+          <h1>Lorem ipsum</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consequuntur quaerat magni nisi fugiat quas quam illum at ipsam
+            cumque quia!
+          </p>
+        </div>
+        <div class="fashion-img">
+          <img src="../images/fashion-img2.png" alt="" />
+        </div>
+        <div class="fashion-nr"><span>02</span></div>
+      </section>
+
+      <section class="fashion3 detail-slide">
+        <div class="fashion-text">
+          <h1>Lorem ipsum</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consequuntur quaerat magni nisi fugiat quas quam illum at ipsam
+            cumque quia!
+          </p>
+        </div>
+        <div class="fashion-img">
+          <img src="../images/fashion-img3.png" alt="" />
+        </div>
+        <div class="fashion-nr"><span>03</span></div>
+      </section>
+    </main>
+
+    <!-- ! layer 3 -->
+    <nav class="nav-bar">
+      <ul class="nav-links">
+        <h3>Twitter</h3>
+        <h3>Youtube</h3>
+        <h3>Facebook</h3>
+      </ul>
+      <div class="contact">
+        <h2>Stay in touch!</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+          eveniet.
+        </p>
+      </div>
+    </nav>
+
+    <!-- ! layer 4 -->
+    <div class="cursor"><span class="cursor-text"></span></div>
+
+    <!-- ! layer 5 -->
+    <div class="loading swipe1"></div>
+    <div class="loading swipe2"></div>
+    <div class="loading swipe3"></div>
+
+    <!-- ! scroll magic, gsap and barba cdns -->
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+      integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"
+      integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"
+      integrity="sha512-RvUydNGlqYJapy0t4AH8hDv/It+zKsv4wOQGb+iOnEfa6NnF2fzjXgRy+FDjSpMfC3sjokNUzsfYZaZ8QAwIxg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+      integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../app.js"></script>
+  </body>
+</html>

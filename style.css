@@ -1,0 +1,438 @@
+:root {
+  --dark: #17181a;
+  --light: #ffffff;
+  --gray: #ffffff80;
+  --blue: #567ce4;
+  --purple: #a77ce4;
+  --orange: #ff8b5d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--dark);
+  font-family: "Work Sans", sans-serif;
+  /* Hide horizontal scroll bar from reveal-text animation */
+  overflow-x: hidden;
+  /* position: relative; */
+}
+
+main {
+  position: absolute; /* main is absolutely positioned to viewport */
+}
+
+img {
+  display: block;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ! layer 1 */
+.nav-header {
+  position: sticky;
+  min-height: 10vh;
+  margin: auto;
+  width: 80%;
+  color: white;
+  font-size: 1rem;
+  padding: 2rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-badge {
+  background: var(--gray);
+  margin-right: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 2px 20px var(--light);
+}
+
+#logo {
+  color: var(--light);
+  font-family: "Abril Fatface";
+}
+
+.burger {
+  justify-items: end;
+  cursor: pointer;
+}
+/* our burger menu */
+.line1,
+.line2 {
+  width: 3rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: var(--light);
+  pointer-events: none;
+}
+body.hide {
+  overflow: hidden;
+}
+
+/* ! layer 2 */
+.slide {
+  min-height: 100vh;
+  margin: 0 auto 0 auto;
+  width: 80%;
+  /* centering content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--light);
+  background: var(--dark);
+}
+
+.hero-img {
+  position: relative;
+  flex: 1;
+  flex-basis: 20rem;
+  /* hide large image when scaling inward */
+  overflow: hidden;
+}
+.hero-img img {
+  object-fit: cover;
+}
+
+.hero-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-basis: 25rem;
+  padding-left: 5rem;
+  position: relative;
+}
+.hero-desc h2 {
+  font-family: "Abril Fatface";
+  font-size: 5rem;
+}
+.hero-desc p {
+  padding: 3rem 0rem;
+  font-size: 1.5;
+  color: var(--light);
+}
+.mountain-span {
+  color: var(--blue);
+}
+.hike-span {
+  color: var(--purple);
+}
+.fashion-span {
+  color: var(--orange);
+}
+.explore {
+  padding: 1rem 2rem;
+  background: none;
+  color: var(--light);
+  border: none;
+  border: 1px solid var(--light);
+  border-radius: 1px;
+  font-size: 1rem;
+  text-decoration: none;
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+.title {
+  position: relative;
+  overflow: hidden;
+}
+.title-swipe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  mix-blend-mode: darken;
+  transform: translateY(100%);
+}
+.t-swipe-1 {
+  background: var(--blue);
+}
+.t-swipe-2 {
+  background: var(--purple);
+}
+.t-swipe-3 {
+  background: var(--orange);
+}
+
+/* reveal animation */
+.reveal-img,
+.reveal-text {
+  /* opacity: 0; */
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  background: var(--dark);
+}
+
+/* ! layer 3 */
+.nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--light);
+  /* centering content */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10; /* under the <header> */
+  opacity: 1;
+  /* bubble affect (animation): */
+  clip-path: circle(50px at 100% -10%);
+  -webkit-clip-path: circle(50px at 100% -10%);
+}
+.nav-links {
+  font-size: 3rem;
+  flex-basis: 30rem;
+}
+.nav-links h3 {
+  padding: 3rem 0rem;
+}
+.contact {
+  flex-basis: 30rem;
+}
+.contact h2 {
+  font-size: 5rem;
+  padding: 2rem 0rem;
+}
+.contact p {
+  font-size: 1.5rem;
+}
+
+/* ! layer 4 */
+.cursor {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--light);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 75% 75%;
+  /* opacity: 0.5; */
+}
+.cursor-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.5rem;
+  transform: translate(-50%, -50%);
+}
+.cursor.nav-active {
+  background: var(--blue);
+  transform: scale(3);
+}
+.cursor.explore-active {
+  background: var(--light);
+  transform: scale(3);
+}
+
+/* ! important  */
+.scrollmagic-pin-spacer {
+  position: static !important;
+}
+
+/* ! other pages (fashion) */
+.detail-slide {
+  min-height: 90vh;
+  width: 70%;
+  margin: auto;
+  margin-top: 5rem;
+  color: var(--light);
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative; /* for descendent(s) */
+}
+
+.fashion-text {
+  flex: 1;
+  flex-basis: 25rem;
+  position: relative;
+}
+.fashion-text h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  padding: 5rem 0rem;
+}
+.fashion1 h1 {
+  color: var(--orange);
+}
+.fashion2 h1 {
+  color: var(--blue);
+}
+.fashion3 h1 {
+  color: var(--purple);
+}
+.fashion-text p {
+  font-size: 1.5rem;
+  /* padding: 2rem 2rem 0rem 0rem; */
+  margin-bottom: 10rem;
+}
+
+.fashion-img {
+  flex: 1;
+  height: 60vh;
+  flex-basis: 30rem;
+}
+.fashion-img img {
+  object-fit: contain;
+}
+.fashion-nr {
+  font-size: 8rem;
+  padding: 1rem;
+  color: var(--light);
+  /* background: var(--dark); */
+  opacity: 0.1;
+  position: absolute;
+  bottom: 13%;
+}
+
+/* ! layer 5 */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+}
+.swipe1 {
+  background: var(--orange);
+  z-index: 500;
+}
+.swipe2 {
+  background: var(--blue);
+  z-index: 400;
+}
+.swipe3 {
+  background: var(--purple);
+  z-index: 300;
+}
+
+/* ! tablet response */
+@media screen and (max-width: 1500px) {
+  .hero-img {
+    height: 50vh;
+  }
+  .fashion-text {
+    flex-basis: 15rem;
+  }
+  .fashion-text h1 {
+    font-size: 2rem;
+    padding: 1rem 0rem;
+  }
+  .fashion-text p {
+    font-size: 1.2rem;
+  }
+  .fashion-img img {
+    height: 50vh;
+    object-position: top;
+  }
+  .fashion-nr {
+    font-size: 6rem;
+    bottom: 25%;
+  }
+}
+
+/* ! mobile response */
+@media screen and (max-width: 1024px) {
+  main {
+    width: 100%;
+    margin: 0;
+  }
+  .slide {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .hero-desc {
+    padding: 0;
+  }
+  .hero-img {
+    padding-top: 6rem;
+  }
+  .hero-img img {
+    max-width: 100%;
+  }
+  .hero-desc h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+  .hero-desc p {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+  .explore {
+    width: 60%;
+    margin: auto;
+  }
+  .detail-slide {
+    width: 100%;
+    text-align: center;
+  }
+  .fashion-text {
+    flex-basis: 10rem;
+  }
+  .fashion-text h1 {
+    font-size: 2rem;
+  }
+  .fashion-text p {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .fashion-img img {
+    flex: 1;
+    flex-basis: 30rem;
+    height: 45vh;
+  }
+  .fashion-nr {
+    font-size: 6rem;
+  }
+
+  .nav-bar {
+    display: block;
+  }
+  .nav-links {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .contact p {
+    font-size: 1.2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+}
